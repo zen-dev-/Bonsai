@@ -1,0 +1,15 @@
+
+Create a new "responsive grid" based on the given pixels
+
+the script is trying to use css3 media queries for device detection.
+if css3 media queries ist not supported by the browser, the device-detection is simple made by window.innerWidth
+
+he device detection is fired by constructor and the window-resize event and load the matching scripts, if the
+
+var responsiveJS = new Bonsai.responsiveGrid( [ 320, 480, 768, 992, 1382 ] );
+
+
+-- USAGE
+responsiveJS.load('js/no-mobile.js','>480') // load the given scripts (array) for the given condition (in this case: 768, 992, 1382)
+			.load('js/mobile.js','<=480') // load the script for 320 and 480
+			.load('js/extralarge.js#!doEveryTime','1382') // the script is loaded EVERYTIME the condition matchs */
